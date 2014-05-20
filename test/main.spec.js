@@ -91,6 +91,20 @@ asyncTest('the fixture is unaffected by external change', function() {
   )
 });
 
+test('the fixtures can be cleared', function() {
+  var response = {foo: 'bar'};
+
+  ic.ajax.defineFixture('/foo', {
+    response: response,
+    textStatus: 'success',
+    jqXHR: {}
+  });
+
+  deepEqual(lookupFixture('/foo'), response);
+  ic.ajax.clearFixtures();
+  ok(!lookupFixture('/foo'), 'fixture is cleared');
+});
+
 test('throws if success or error callbacks are used', function() {
   var k = function() {};
   throws(function() {
