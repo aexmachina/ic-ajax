@@ -69,7 +69,18 @@ function lookupFixture (url) {
   return __fixtures__ && __fixtures__[url];
 }
 
-exports.lookupFixture = lookupFixture;function makePromise(settings) {
+exports.lookupFixture = lookupFixture;/*
+ * Clears the list of fixtures created by defineFixture()
+ */
+function clearFixtures() {
+  for (var i in __fixtures__) {
+    if (__fixtures__.hasOwnProperty(i)) {
+      delete __fixtures__[i];
+    }
+  }
+}
+
+exports.clearFixtures = clearFixtures;function makePromise(settings) {
   return new Ember.RSVP.Promise(function(resolve, reject) {
     var fixture = lookupFixture(settings.url);
     if (fixture) {

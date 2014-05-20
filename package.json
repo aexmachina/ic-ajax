@@ -4,8 +4,8 @@
   "description": "ember friendly $.ajax wrapper",
   "main": "dist/cjs/main.js",
   "devDependencies": {
-    "broccoli": "^0.2.0",
-    "broccoli-dist-es6-module": "^0.1.8",
+    "broccoli": "^0.12.0",
+    "broccoli-dist-es6-module": "^0.2.0",
     "broccoli-cli": "0.0.1",
     "karma": "^0.10.9",
     "karma-chrome-launcher": "^0.1.2",
